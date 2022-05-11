@@ -68,4 +68,26 @@ Console.WriteLine(CreateRandomArray(num));
 
 //Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
 
+double SumElements (int size)
+{
+    double[] array = new double[size];
+    double max = 0;
+    double min = 100000000;
+    for (int i = 0; i < size; i++)
+    {
+        array[i] = new Random().Next(-100, 100) + new Random().NextDouble();
+        if (max < array[i])
+                {
+            max = array[i];
+        }
+        if (min > array[i])
+        {
+            min = array[i];
+        }
+    }
+    Console.WriteLine(string.Join(" ", array));
+    return max - min;
+}
 
+int num = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine(SumElements(num));
